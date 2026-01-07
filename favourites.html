@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favourites</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>My Favourites</h1>
+        <a href="index.html" class="back-link">Back to HomePage</a>
+        <div id="user-info"></div>
+    </header>
+
+    <div class="container">
+        <div id="not-logged-in" class="message hidden">
+            <p>Please <a href="index.html">sign in</a> to view your favourites.</p>
+        </div>
+
+        <div id="no-favourites" class="message hidden">
+            <p>No favourites yet. <a href="index.html">Search for movies</a> to add some!</p>
+        </div>
+
+        <div id="favourites-grid" class="results-grid"></div>
+    </div>
+    
+    <div id="movie-modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <div class="modal-body">
+                <img id="modal-poster" src="" alt="Movie poster">
+                <div class="modal-info">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-year"></p>
+                    <p id="modal-rating"></p>
+                    <p id="modal-genre"></p>
+                    <p id="modal-director"></p>
+                    <p id="modal-actors"></p>
+                    <p id="modal-plot"></p>
+                    <button id="remove-favourite-btn" class="btn-danger">Remove from favourites</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Movie Search. All rights reserved.</p>
+    </footer>
+</body>
+</html>

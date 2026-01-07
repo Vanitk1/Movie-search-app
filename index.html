@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1 id="movie-search">🎬 Movie Search</h1>
+        <nav>
+        <a href="favourites.html" id="favourites-link" class="hidden">Favourites</a>
+        <button id="signin-btn-header" class="btn-signin">Sign In</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search Movies...">
+            <button id="search-btn" class="btn-primary">Search</button>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Searching...</p>
+        </div>
+
+        <div id="error-message" class="error-message hidden">
+            <p>No movies found. Try a different search.</p>
+        </div>
+
+        <div id="results-grid" class="results-grid"></div>
+    </div>
+        
+        <div id="movie-modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <div class="modal-body">
+                <img id="modal-poster" src="" alt="Movie poster">
+                <div class="modal-info">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-year"></p>
+                    <p id="modal-rating"></p>
+                    <p id="modal-genre"></p>
+                    <p id="modal-director"></p>
+                    <p id="modal-actors"></p>
+                    <p id="modal-plot"></p>
+                    <button id="add-favourite-btn" class="btn-favourite">❤️ Add to favourites</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="signin-modal" class="modal hidden">
+        <div class="modal-content signin-content">
+            <button id="close-signin" class="close-btn">&times;</button>
+            <h2>Sign In</h2>
+            <p>Enter your name to save favourites</p>
+            <input type="text" id="username-input" placeholder="Your name">
+            <button id="signin-btn" class="btn-primary">Sign In</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 Movie Search. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
