@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #0f0f1a;
+    min-height: 100vh;
+    flex-direction: column;
+    display: flex;
+    color:  #fff;
+}
+
+header {
+    background-color:#1a1a2e;;
+    padding: 1rem 2rem;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #2a2a4a;
+}
+
+
+header h1 {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+header a {
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    color: #e94560
+}
+
+header a:hover {
+   color: #ff6b6b
+} 
+
+.back-link {
+    color: #888
+}
+
+.back-link:hover {
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #e94560;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    color: #ff6b6b;
+}
+
+.btn-signin {
+    background: transparent;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e94560;
+    border-radius: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-signin:hover {
+    color:white;
+    background-color: #e94560;
+}
+
+
+.btn-favourites {
+    background-color: #e94560;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.btn-favourites:hover {
+    background: #ff6b6b;
+}
+
+/* .btn-danger {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+} */
+
+.container {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 2rem;
+    flex: 1;
+}
+
+.search-bar {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+    width: min(1400px, 30vw);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.search-bar input {
+    flex: 1;
+    align-items: left;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #2a2a4a;
+    border-radius: 0.8rem;
+    font-size: 1rem;
+    background: #1a1a2e;
+    color: white;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-bar input:focus {
+    border-color: #e94560;
+}
+
+.search-bar input::placeholder {
+    color: #666;
+}
+
+.loading {
+    display: flex;
+    flex-direction:column;
+    gap: 1rem;
+    padding: 3rem;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #2a2a4a;
+    border-top-color: #e94560;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error-message {
+    text-align: center;
+    padding: 2rem;
+    color: #888;
+}
+
+.message {
+    text-align: center;
+    padding: 2rem;
+    color: #888;
+}
+
+.message a {
+    color: #e94560;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.movie-card {
+    background: #1a1a2e;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(233, 69, 96, 0.2);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    background: #2a2a4a;
+}
+
+.movie-card-info {
+    padding: 1rem;
+}
+
+.movie-card-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-card-info p {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modal-content {
+    background: #1a1a2e;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 10;
+}
+
+.close-btn:hover {
+    color: #fff;
+}
+
+.modal-body {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.modal-body img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.modal-info {
+    flex: 1;
+}
+
+.modal-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-info p {
+    color: #ccc;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.modal-info p:last-of-type {
+    margin-bottom: 0;
+}
+
+.signin-content {
+    max-width: 400px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.signin-content h2 {
+    margin-bottom: 0.5rem;
+}
+
+.signin-content p {
+    color: #888;
+    margin-bottom: 1.5rem;
+}
+
+.signin-content input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #2a2a4a;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #0f0f1a;
+    color: #fff;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+.signin-content input:focus {
+    border-color: #e94560;
+}
+
+.signin-content .btn-primary {
+    width: 100%;
+}
+
+#user-info {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+footer {
+    background: #1a1a2e;
+    padding: 1.5rem;
+    text-align: center;
+    color: #666;
+    border-top: 1px solid #2a2a4a;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .modal-body {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .modal-body img {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .results-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+    
+    .movie-card img {
+        height: 225px;
+    }
+}
