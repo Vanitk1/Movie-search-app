@@ -1,7 +1,12 @@
 **Movie Search App**
 
 A movie search web application built with vanilla HTML, CSS, and JavaScript. Search for movies, view details, and save your favourites.
-Features
+
+**Live Demo**
+
+https://vanitk1.github.io/Movie-search-app/
+
+**Features**
 
 Search movies — Search the OMDB database by movie title
 View details — Click any movie to see full details (rating, genre, director, cast, plot)
@@ -59,5 +64,6 @@ Get details: Returns full movie details
 **Data storage**
 
 Data is stored in localStorage
+
 
 
