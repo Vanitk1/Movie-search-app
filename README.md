@@ -12,7 +12,7 @@ Loading states — Visual feedback while searching
 Error handling — Friendly messages when no results found
 Responsive design — Works on desktop and mobile
 
-Technologies used
+**Technologies used**
 
 HTML5
 CSS3
@@ -28,12 +28,10 @@ Go to OMDB API
 Select "Free" and enter your email
 Activate via the email link
 
-
 Add your API key:
 
 Open app.js
 Replace the API_KEY value with your key:
-
 
 javascript:  const API_KEY = "your_api_key_here";
 
@@ -41,7 +39,6 @@ Run the app:
 
 Open index.html in your browser
 Or use Live Server in VS Code
-
 
 **How to use**
 
@@ -52,7 +49,8 @@ Save favourites — Click "❤️ Add to Favourites" in the movie details
 View favourites — Click the "Favourites" link in the header
 Remove favourites — Open a movie from favourites and click "Remove"
 
-API reference
+**API reference**
+
 This app uses the OMDB API:
 
 Search by title: Returns list of matching movies
@@ -61,4 +59,5 @@ Get details: Returns full movie details
 **Data storage**
 
 Data is stored in localStorage
+
 
